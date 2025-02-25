@@ -1,0 +1,209 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta  name="viewport" content="width=device-width"/>
+<title>My first site</title>
+<link rel="stylesheet" href="index.css" type="text/css"/>
+<script type="module" src="script.js"> </script>
+</head>
+
+<body>
+    <h1>A FLOWER</h1>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Pink_flower.jpg" alt="flower" width="150" height="200"/>
+
+    <!-- Heading levels -->
+<!-- 
+<h1>Heading level 1</h1>
+<h2>Heading level 2</h2>    
+<h3>Heading level 3</h3>
+<h4>Heading level 4</h4>
+<h5>Heading level 5</h5>
+<h6>Heading level 6</h6> -->
+
+<!-- LIST -->
+<!-- ordered and unordered list -->
+ <p>These are the shopping items for tomorrow</p>
+ <!-- unordered list -->
+<ul>
+    <li>Mango</li>
+    <li>Canvas</li>
+    <li>Beetroot</li>
+</ul>
+<!-- ordered list -->
+<ol>
+    <li>Buy a new phone</li>
+    <li>Buy a new laptop</li>
+    <li>Buy a new car</li>
+</ol>
+
+<p>These are the shopping items for tomorrow</p>
+
+<a href="https://www.facebook.com">link</a>
+
+<p>
+    <blockquote>
+    The <strong>HTML</strong> <em>strong</em> element <q>represents strong importance, seriousness, or urgency for its contents.</q>
+</blockquote>
+</p>
+    
+<address>
+    <p>Written by <a href="mailto:johnmiler@gmail.com">John Miler</a>.</p>
+<p class="contact" id="address">
+    John Miller <br/>
+    Manchester <br/>
+    Old Trafford <br/>
+    M16 0RA <br/>
+    United Kingdom
+</p>
+<ul>
+    <li>Phone: 0123456789</li>
+    <li>Email: johnmiler@gmail.com</li>
+</ul>
+
+</address>
+
+<p class="birthday">Milka birthday is on the 16 <sup>th</sup> of March, 2025</p>
+
+<p id="water">
+    The formula for water is: <br/>
+    H<sub>2</sub>O
+</p>
+
+<!-- Tables -->
+
+<table border="3">
+    <caption>favorite dogs in my house and their owners</caption>
+
+    <tr>
+        <td>&nbsp;</td>
+        <th>Jacky</th>
+        <th>flor</th>
+        <th>Thor</th>
+        <th>Billy</th>
+    </tr>
+    <tr>
+        <th>Breed</th>
+        <td>bulldog</td>
+        <td>german shephard</td>
+        <td>pitbull</td>
+        <td>rottweiler</td>
+    </tr>
+    <tr>
+        <th>Age</th>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+    </tr>
+    <tr>
+        <th>Owner</th>
+        <td>My brother</td>
+        <td>Smith</td>
+        <td>Jack</td>
+        <td>Me</td>
+    </tr>
+    <tr>    
+        <th>eating habits</th>
+        <td>2 times a day</td>
+        <td>3 times a day</td>
+        <td>4 times a day</td>
+        <td>Will eat until he explodes</td>
+    </tr>
+</table>
+
+<!-- Spanning multiple rows and columns -->
+ <br/>
+ <br/>
+ <p>----------------------------------------------------------------</p>
+ <br/>
+ <table border="1">
+    <tr>
+        <th colspan="2">Animals</th>
+    </tr>
+    <tr>
+        <th colspan="2">
+            Hippopotamus
+        </th>
+    </tr>
+    <tr>
+        <th rowspan="2">Horse</th>
+        <td>Mare</td>
+    </tr>
+    <tr>
+        <td>stallion</td>
+    </tr>
+    <tr>
+        <th colspan="2">Crocodile</th>
+    </tr>
+    <tr>
+        <th rowspan="2">Chicken</th>
+        <td>hen</td>
+    </tr>
+    <tr>
+        <td>Rooster</td>
+    </tr>
+ </table>
+<br/>
+<br/>
+<p>----------------------------------------------------------------</p>
+<br/>
+<table border="1">
+    <caption>Table 1: Student's Result</caption>
+    <tr>
+        <th>Student Name</th>
+        <th>Maths</th>
+        <th>English</th>
+        <th>Science</th>
+    </tr>
+    <tr>
+        <td>John</td>
+        <td>90</td>
+        <td>80</td>
+        <td>70</td>
+    </tr>
+    <tr>
+        <td>Smith</td>
+        <td>70</td>
+        <td>60</td>
+        <td>50</td>
+    </tr>
+</table>
+<p><h3>FORMS AND BUTTONS</h3></p>
+
+<form action="./submit_page" method="get">
+
+    <h2>suscribe to our newsletter</h2>
+    <p>
+        <label for="name">Name (required):</label>
+        <input type="text" id="name" name="name" required/>
+    </p>
+
+    <p>
+        <label for="email">Email (required):</label>
+        <input type="email" id="email" name="email" required/>
+        <input type="checkbox" id="subscribe" name="subscribe" checked/>
+        <label for="subscribe">Subscribe to our newsletter</label>
+       <div  class="buttons"> <input type="reset"/></div>
+    </p>
+
+<p>
+    <button type="submit">Sign me up!</button>
+</p>
+</form>
+
+
+<button>Click me</button>
+<input type="submit">Submit</input>
+<button type="reset">Reset</button>
+
+
+
+
+
+
+</body>
+
+</html>
