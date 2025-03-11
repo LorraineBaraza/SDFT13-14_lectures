@@ -783,46 +783,296 @@
 //Array methods
 //CONCAT
 
-let myArr=["1", "2", "3"]
-let newArr=[1, 2, 3., true, null]
+// let myArr=["1", "2", "3"]
+// let newArr=[1, 2, 3, true, null]
 
-let myArray= myArr.concat(newArr)
+// let myArray= myArr.concat(newArr)
 
-console.log(myArray)
+// console.log(myArray)
 
-//JOIN
-const list= myArr.join("-")
-const newList=newArr.join("*")
-console.log(newArr)
-console.log(newList)
-console.log(list)
-console.log(typeof(list))
+// //JOIN
+// const list= myArr.join("-")
+// const newList=newArr.join("*")
+// console.log(newArr)
+// console.log(newList)
+// console.log(list)
+// console.log(typeof(list))
 
 //PUSH
-const result=newArr.push(4,5,6)
-console.log(newArr)
-console.log(result)
+// const result=newArr.push(4,5,6)
+// console.log(newArr)
+// console.log(result)
 
-//POP()
-const popedValue=newArr.pop()
-console.log(newArr)
-console.log(popedValue)
+// //POP()
+// const popedValue=newArr.pop()
+// console.log(newArr)
+// console.log(popedValue)
 
-//SHIFT
-const shiftValue=newArr.shift()
-console.log(newArr)
-console.log(shiftValue)
+// //SHIFT
+// const shiftValue=newArr.shift()
+// console.log(newArr)
+// console.log(shiftValue)
 
-//UNSHIFT
-const unshiftResult=newArr.unshift(1)
-console.log(newArr)
-console.log(unshiftResult)
+// //UNSHIFT
+// const unshiftResult=newArr.unshift(1)
+// console.log(newArr)
+// console.log(unshiftResult)
 
-//SLICE
-const sliceValue=newArr.slice(1, newArr.length)
-console.log(newArr)
-console.log(sliceValue)
+// //SLICE
+// const sliceValue=newArr.slice(1, newArr.length)
+// console.log(newArr)
+// console.log(sliceValue)
 
-//AT
-const atValue= newArr.at(-3)
-console.log(atValue)
+// //AT
+// const atValue= newArr.at(-3)
+// console.log(atValue)
+
+//SPLICE
+//modifies the content of an array
+//removes existing elements
+//replace existing elements
+//adds new elemnt in place
+//An array containing the deleted values
+
+//splice (start) //if start > length of the array, nothing will be deleted the method will behave as an adding function
+//splice (start, deletecount)
+//splice (start, deletecount, item1)
+//splice (start, deletecount, item1....ItemN)
+
+// //Example 1
+// const months= ["jan", "March", "April", "June"]
+// const newResult=months.splice(0, 2, "feb")
+// console.log(months)
+// console.log(newResult)
+
+// //Example 2
+// const myFishes= ["angel", "clown", "mandarin", "sturgeon"]
+// const removed= myFishes.splice(-2, 1, "drum", "delicious")
+
+// console.log(myFishes) //[]
+// console.log(removed) //[]
+
+// //Reverse
+// const reversed=myFishes.reverse()
+// console.log(myFishes)
+// console.log(reversed)
+
+// //Flat()
+// let numArr=[1,2,3,[4, 5,[6, 7,[8, 9]]]]
+// numArr=numArr.flat(3)
+
+// console.log(numArr)
+
+// const myObj={
+//     favoriteNumber: 42,
+//     isDeveloper:true,
+//     firstName: "Oh"
+// }
+
+// const propDesc= Object.getOwnPropertyDescriptor(myObj, "favoriteNumber")
+// console.log(propDesc)
+// const anotherObj={}
+// Object.defineProperty(anotherObj, "fave", propDesc )
+// console.log(Object.getOwnPropertyDescriptor(anotherObj, "fave"))
+
+// console.log(anotherObj.fave)
+
+// const newArray= new Array(3)
+// console.log(newArray)
+
+// let myList= [23, 42, 100] //3
+
+// myList[14]="Hello"
+// console.log(myList[9])
+// console.log(myList.length)
+
+//Sort()
+// const myArray= ["Wind", "Rain", "Fire", "Air"]
+// let sortedResult=myArray.sort()
+// console.log(myArray)
+// console.log(sortedResult)
+
+// const sortFn= (a,b)=>{
+//     if (a[a.length-1] < b[b.length-1]){
+        // return -1; //means a should come before b
+//     } else if (a[a.length-1] > b[b.length-1]){
+//         return 1; // means that a shoud come after b
+//     }
+//     return 0
+// };
+
+// (a,b)=> a-b 
+// const result= myArray.sort(sortFn)
+// console.log(result)
+
+// const array1= [1, 30, 4, 21, 1000]
+// console.log(array1.sort())
+
+// const numberArray=[40,1,5,200]; //1,5,40,200
+// const numericStringArray=["80", "9", "700"]
+// const mixedNumericArray=["80", "9", "700", 40,1,5,200]
+                        
+// function compareNumbers (a,b){
+//     return a-b
+// }
+
+// 200,40,5, 1
+
+// console.log(numberArray.sort())
+// console.log(numberArray.sort(compareNumbers))
+
+// console.log(numericStringArray.sort())
+// console.log(numericStringArray.sort(compareNumbers))
+
+// console.log(mixedNumericArray.sort())
+// console.log(mixedNumericArray.sort(compareNumbers))
+
+//Sorting Array of objects
+// const items=[
+//     {name: "Edward", value: 21},
+//     {name: "Sharpe", value: 37},
+//     {name: "And", value: 45},
+//     {name: "The", value: -12},
+//     {name: "Magnetic", value: 21},
+//     {name: "Zeroes", value: 37},
+// ]
+
+// //sort by value
+// items.sort((a,b)=> a.value-b.value)
+
+// //sort by name
+// items.sort((a,b)=>{
+//     const nameA= a.name.toUpperCase()
+//     const nameB= b.name.toUpperCase()
+//     if(nameA < nameB){
+//         return -1
+//     } else if(nameA > nameB){
+//         return 1
+//     }
+//     return 0;
+
+// })
+
+// //indexOf
+// // const a=["a", "b", "c", "d", "a", "b"]
+
+// // console.log(a.indexOf("b"))
+// // console.log(a.indexOf("b", 2))
+// // console.log(a.indexOf("z"))
+
+// // //lastIndexOf() 
+// // console.log(a.lastIndexOf("b", 4))
+
+// // //forEach 
+// // const arr= ["a", "b", "c"]
+
+// arr.forEach(element=>{
+//     console.log(element.toUpperCase())
+// })
+
+//map
+// const mappedArr=arr.map(element=> element.toUpperCase())
+
+// console.log(arr)
+// console.log(mappedArr)
+
+// const numbers= [1,4,9]
+// const root= numbers.map(num=>Math.sqrt(num))
+// console.log(root)
+
+// const kvArray=[
+//     {key:1, value:10},
+//     {key:2, value:20},
+//     {key:3, value:30}
+// ]
+// const reformatArray=kvArray.map(({key, value})=> ({[key]:value}));
+// console.log(kvArray)
+// console.log(reformatArray)
+
+//Sort with Map
+//traverse the array once
+//extract the actual values used for sorting inot a temp arr
+//sort the temp arr
+//transverse the temp arr to achieve the right order
+
+//the array to sort
+// const data=["delta", "alpha", "charlie", "bravo"]
+
+// const someSlowOps= value=> value.toUpperCase()
+
+//temp arr hold obj position and sort value
+// const mapped= data.map((v, i)=>{
+//     return {i, value: someSlowOps(v)}
+// })
+
+// console.log
+// console.log(mapped) //0000000
+
+// //sort the mapp arr containing the reduced val
+// const newMapped=mapped.sort((a,b)=>{
+//     if(a.value<b.value){
+//         return -1
+//     } else if(a.value > b.value){
+//         return 1
+//     }
+//     return 0
+// })
+// console.log(newMapped)
+
+// //newMapped=Mapped
+
+// const newResult= mapped.map((v)=>data[v.i])
+// console.log(newResult)
+
+// const numbers=[3, 1, 4, 1,5]
+// // const mappedNum= numbers.map((e, i)=>{
+// //     return {i, value: e * e}
+// // })
+
+// // console.log(mappedNum)
+// const sorted=numbers.sort((a,b)=>a-b);
+// console.log(sorted)
+// sorted[0]=10
+// console.log(numbers[0])
+
+
+
+const numbers= [3, -1, 1, 4, 1, 5, 9, 2, 6]
+                                                //4, //2, [3,1,4,1,5,9,2,6]
+const averaged= numbers.filter((num)=>num>0).map((num, idx,arr)=>{
+    
+    const prev= arr[idx-1]
+    console.log(`Prev: ${prev}`)
+    const next= arr[idx + 1] 
+    console.log(`Next: ${next}`)
+    let count=1;
+    let total= num //3
+    console.log(`Total:${total}`)
+    if (prev !== undefined){
+        count++ //1
+        console.log(`PrevCount: ${count}`)
+        total +=prev //9
+        console.log(`PrevTotal: ${total}`)
+    }
+
+    if(next !==undefined){
+        count++; //2
+        console.log(`NextCount: ${count}`)
+        total+=next //
+        console.log(`NextTotal: ${total}`)
+    }
+    const average= total/count
+    console.log(average)
+
+    return Math.round(average * 100)/100
+})
+
+console.log(averaged)
+
+
+
+
+//filter method
+const a1= ["19", 10, "20", 20, "30", 30]
+const a2= a1.filter((item)=> typeof item==="string")
+console.log(a2)
