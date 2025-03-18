@@ -1037,42 +1037,428 @@
 
 
 
-const numbers= [3, -1, 1, 4, 1, 5, 9, 2, 6]
-                                                //4, //2, [3,1,4,1,5,9,2,6]
-const averaged= numbers.filter((num)=>num>0).map((num, idx,arr)=>{
+// const numbers= [3, -1, 1, 4, 1, 5, 9, 2, 6]
+//                                             //  [3,1,4,1,5,9,2,6]
+// const averaged= numbers.filter((num)=>num>0).map((num, idx,arr)=>{
     
-    const prev= arr[idx-1]
-    console.log(`Prev: ${prev}`)
-    const next= arr[idx + 1] 
-    console.log(`Next: ${next}`)
-    let count=1;
-    let total= num //3
-    console.log(`Total:${total}`)
-    if (prev !== undefined){
-        count++ //1
-        console.log(`PrevCount: ${count}`)
-        total +=prev //9
-        console.log(`PrevTotal: ${total}`)
-    }
+//     const prev= arr[idx-1]
+//     console.log(`Prev: ${prev}`)
+//     const next= arr[idx + 1] 
+//     console.log(`Next: ${next}`)
+//     let count=1;
+//     let total= num //1
+//     console.log(`Total:${total}`)
+//     if (prev !== undefined){
+//         count++ 
+//         console.log(`PrevCount: ${count}`)
+//         total +=prev //4
+//         console.log(`PrevTotal: ${total}`)
+//     }
 
-    if(next !==undefined){
-        count++; //2
-        console.log(`NextCount: ${count}`)
-        total+=next //
-        console.log(`NextTotal: ${total}`)
-    }
-    const average= total/count
-    console.log(average)
+//     if(next !==undefined){
+//         count++; //2
+//         console.log(`NextCount: ${count}`)
+//         total+=next //
+//         console.log(`NextTotal: ${total}`)
+//     }
+//     const average= total/count
+//     console.log(average)
 
-    return Math.round(average * 100)/100
+//     return Math.round(average * 100)/100
+// })
+
+// console.log(averaged)
+
+
+
+
+// //filter method
+// const a1= ["19", 10, "20", 20, "30", 30]
+// const a2= a1.filter((item)=> typeof item==="number")
+// console.log(a2)
+
+// //flatmap
+
+// const a3= ["a", "b", "c"]
+// const a4= a3.flatMap((item)=> [item.toUpperCase(), item.toLowerCase()])
+// console.log(a4)
+
+// //find
+// const findNum=a1.find((item)=> typeof item==="number")
+// console.log(findNum)
+
+// //findLast
+// const findLastItem=a1.findLast((item)=> typeof item ==="number")
+// console.log(findLastItem)
+
+// //findIndex
+// const findNumIdx=a1.findIndex((item)=> typeof item==="number")
+// console.log(findNumIdx)
+
+// //findLastIndex
+// const findLastItemIdx=a1.findLastIndex((item)=> typeof item ==="number")
+// console.log(findLastItemIdx)
+
+// //every()
+// function isNumber (val){
+//     return typeof val === "number"
+// }
+
+// console.log(a2.every(isNumber))
+
+//some()
+
+// console.log(a1.some(isNumber))
+
+//reduce
+//reduce(callback)
+//reduce(callback, initialvalue)
+//callbaclk(accumulator, currentval, currentindex, array)
+
+// const a= [10, 20, 30, 40]
+
+// const callbk=function(acc, curval){
+//     console.log(acc)
+//     console.log(curval)
+//     return acc + curval
+// }
+// const total= a.reduce(callbk);
+
+// console.log(total)
+
+// const obj= [{x:1}, {x:2}, {x:3}]
+
+// const sum= obj.reduce((acc, curval)=>acc+ curval.x, 0)
+// console.log(sum)
+// //const val= array.reduce((acc, curr)=> acc + curr, initialval)
+
+// //let val=initialval
+// //for (const cur of array){
+// // val= val + cur}
+
+// const names= ["Alicia", "Brian", "Bruce", "Laureen"]
+
+// const countedNames= names.reduce((allNames,name)=>{
+//     const currCount=Object.hasOwn(allNames,name)?allNames[name]:0
+//     return{
+//         ...allNames,
+//         [name]: currCount +1
+//     }
+// }, {})
+
+// //reduceRight()
+
+
+// Multidimensional Arrays
+// let activities= [
+//     ["work", 9],
+//     ["Eat", 1],
+//     ["travel", 2],
+//     ["gamble", 1],
+//     ["Sleep", 9]
+// ];
+
+// console.table(activities)
+
+// console.log(activities[0][1])
+
+// activities.push(["study", 10])
+
+// console.table(activities)
+
+// activities.splice(1, 0, ["programming", 1])
+// console.table(activities)
+
+// activities.forEach(activity=>{
+//     let percentage= ((activity[1]/24) *100).toFixed()
+//     activity[2]= `${percentage} %`
+// })
+
+// console.table(activities)
+
+// activities.pop()
+
+// console.table(activities)
+
+// activities.forEach(activity=>{
+//     activity.pop(2)
+// })
+
+// console.table(activities)
+
+// //Iterating over elements of the multidimensional array
+
+// for (let i=0; i<activities.length; i++){
+
+//     var innerArrayLength= activities[i].length
+
+//     for (let j=0; j<innerArrayLength; j++){
+//         console.log(`[${i} , ${j} ]= ${activities[i][j]}`)
+//     }
+
+// }
+// console.log("--------FOREACH--------------")
+// activities.forEach((activity)=>{
+//     activity.forEach((item)=>{
+//         console.log(item)
+//     })
+// })
+
+
+
+// const a= new Array(4); //create an arr with length of 4
+// console.log(a.length)
+
+// for (let i=0; i<4; i++){
+//     a[i]=new Array(4);
+//     for (let j=0; j<4; j++){
+//        console.log( a[i][j]= `[${i}, ${j}]`)
+//     }
+// }
+
+//spread and rest operator, destruturing 
+
+//spread in objects
+
+// const obj1={ele: "bar", x:10};
+// const obj2= {bar: "baz", y: 13}
+
+// const mergedObj={x:41, ...obj1, ...obj2, y: 9}
+// console.log(mergedObj)
+
+// const isSummer=true;
+// const fruits={
+//     apple:10,
+//     banana:5,
+
+//     ...(isSummer?{watermelon:30}: {}),
+// }
+
+// console.log(fruits)
+// // const clonedObj={...obj}
+// // console.log(clonedObj)
+
+// //rest parameter
+// function sum(...theArgs){
+//     let total= 0;
+//     for (const arg of theArgs){
+//         total +=arg
+//     }
+//     return total
+// }
+
+// console.log(sum(1,2,3))
+// console.log(sum(1,2,3,5,6,6,7))
+
+// //restrictions using rest
+// //it has to be the last paramenter
+// //a function definition can only have one rest parameter
+// //trailing commas are not allowed afeter the rest parameter
+// //the rest paarmeter cannot have a default value
+
+// function myFun(a, b, ...manyMoreArgs){
+//    console.log("a", a)
+//    console.log("b", b)
+//    console.log("manyMoreArgs", manyMoreArgs)
+// }
+
+// myFun("one", "two", "three", "four", "five", "six")
+
+
+// //destructuring
+// // let a, b, rest
+
+// // [a,,b,...rest]=[10,20,30,40,50]
+// // console.log(b)
+// // console.log(rest)
+
+// // const obj={prop1:x, prop2:y, prop3:z};
+
+// // const {prop1:x, prop2:y,prop3:z }= obj
+
+// //const x= obj.prop1
+
+// //default value
+
+// const [a=1]=[]
+// console.log(a)
+// const {b=console.log("hey there")}= {b:undefined}
+// console.log(b)
+
+// const {c=5}={c:null}
+// console.log(c)
+
+// const [first,...others]=[1,2,4]
+// console.log(first)
+
+// const {d, ...others2}={d:1, b:2, c:3}
+
+// console.log(d)
+
+// const foo=["one", "two", "three"]
+
+// const [red, yellow, green, blue, purple]=foo;
+
+// console.log(red)
+// console.log(yellow)
+// console.log(green)
+// console.log(blue)
+// console.log(purple)
+
+// let varA= 1;
+// let varB= 3;
+
+// varA=varA+varB//4
+
+// varB=varA-varB//1
+// varA= varA- varB//3
+
+// console.log(varA)
+// console.log(varB)
+
+// let myArray= [-12, -2, 55, 68, 80];
+
+// // const temp= myArray[0]
+// // myArray[0]=myArray[1]
+// // myArray[1]=temp
+
+// // console.log(myArray)
+
+// [myArray[0], myArray[2]]=[myArray[2], myArray[0]]
+
+// console.log(myArray)
+
+
+// // [varA,varB]=[varB,varA]
+
+// // console.log(varA)
+// // console.log(varB)
+
+// function f(){
+//     return [1,3,4,5]
+// }
+
+// const [argA, ,argB]=f()
+// console.log(argA)
+// console.log(argB)
+
+// const[singleVal]=f()
+// console.log(singleVal)
+
+// const newMap=new Map([
+//    [1,2],
+//    [3,4] 
+// ]);
+// const [j,k]= newMap
+
+// console.log(j)
+// console.log(k)
+
+// // const obj= {0:"a", 1:"b", length: 2};
+
+// // const [m,n]=obj
+
+// //object destructuring
+
+// const user={
+//     id:2,
+//     isVerified:true
+// }
+
+// const {id, isVerified}=user;
+// console.log(id)
+// console.log(user)
+
+// const o={
+//     p:42,
+//     q:true
+// }
+// const {p:full, q:bar=true}= {p:42, q:true}
+
+// console.log(full)
+// console.log(bar)
+
+
+// //destructuring nested objects 
+
+
+// //destructuring nested arrays
+
+
+//DOCUMENT OBJECT MODEL
+
+// const table=document.querySelectorAll("table")
+// console.log(table[0])
+// console.log(table.item(1))
+// alert(paragraph[0].nodeName)
+
+console.log(document.title)
+
+//Fundamental Data Types (DOM)
+
+//Document
+console.log(document)
+
+//Node
+
+//Element
+document.createElement("p")
+
+//NodeList
+
+//Attr
+
+//NamedNodeMap
+console.log(NamedNodeMap)
+console.log(HTMLTableElement)
+
+const table= document.getElementById("table");
+
+const tableAttr= table.attributes
+console.log(tableAttr)
+
+for (let i=0; i<tableAttr.length; i++){
+        if (tableAttr[i].nodeName.toLowerCase()==="border"){
+                table.border="3"
+}
+}
+
+table.summary="note:increased border"
+
+console.log(document)
+
+//Core Interfaces
+
+//document , window
+
+// document.querySelector()
+// document.querySelectorAll()
+// document.createElement()
+// Element.innerHTML()
+// Element.setAttribute()
+// Element.getAttribute()
+// EventTarget.addEventListener()
+// EventTarget.removeEventListener()
+// HTMLElement.style
+// Node.appendChild()
+// window.onload()
+// window.scrollTo()
+
+const story= document.querySelector(".story")
+console.log(story)
+const setText= document.querySelector(".set-first-para")
+const resetText=document.querySelector(".reset")
+
+setText.addEventListener("click", ()=>{
+        story.textContent="Twas a dark and beautiful night..."
+        alert("paragraph content changed")
 })
 
-console.log(averaged)
+resetText.addEventListener("click", ()=>{
+        story.textContent=""
+        alert("first paragraph content cleared")
+})
 
-
-
-
-//filter method
-const a1= ["19", 10, "20", 20, "30", 30]
-const a2= a1.filter((item)=> typeof item==="string")
-console.log(a2)
+document.addEventListener("click", ()=>{
+        alert("Don't do this")
+})
