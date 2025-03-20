@@ -68,3 +68,7 @@ input[type="submit"]:focus
 {
     background-color: #10eb52
 }
+
+.hidden{
+    display: none;
+}

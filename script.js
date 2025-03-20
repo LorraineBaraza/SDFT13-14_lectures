@@ -1444,21 +1444,170 @@ console.log(document)
 // window.onload()
 // window.scrollTo()
 
-const story= document.querySelector(".story")
-console.log(story)
-const setText= document.querySelector(".set-first-para")
-const resetText=document.querySelector(".reset")
+// const story= document.querySelector(".story")
+// console.log(story)
+// const setText= document.querySelector(".set-first-para")
+// const resetText=document.querySelector(".reset")
 
-setText.addEventListener("click", ()=>{
-        story.textContent="Twas a dark and beautiful night..."
-        alert("paragraph content changed")
-})
+// setText.addEventListener("click", ()=>{
+//         story.textContent="Twas a dark and beautiful night..."
+//         alert("paragraph content changed")
+// })
 
-resetText.addEventListener("click", ()=>{
-        story.textContent=""
-        alert("first paragraph content cleared")
-})
+// resetText.addEventListener("click", function (){
+//         story.textContent=""
+//         alert("first paragraph content cleared")
+// })
 
-document.addEventListener("click", ()=>{
-        alert("Don't do this")
+
+
+// const button= document.querySelector(".button")
+// console.log(button)
+
+
+
+
+
+// function changed(){
+
+//         const header= document.querySelector("h1")
+//         console.log(header)
+//         header.firstChild.data="A dynamic document"
+//         header.style.color="blue"
+
+//         const para= document.querySelector("p")
+//         console.log(para)
+//         para.firstChild.data="This is the first paragaph"
+
+
+//         const newText= document.createTextNode("This is the second paragraph")
+
+//         const newElement= document.createElement("p")
+
+//         newElement.appendChild(newText)
+
+//         para.parentNode.insertBefore(newElement, para.nextSibling)
+// }
+
+// button.addEventListener("click", changed)
+
+//create a tree
+const root= document.createElement("html")
+root.lang="en"
+
+const head= document.createElement("head")
+const title= document.createElement("title")
+title.appendChild(document.createTextNode("My document"))
+head.appendChild(title)
+
+const body= document.createElement("body")
+const header= document.createElement("h1")
+header.appendChild(document.createTextNode("Header"))
+const paragraph= document.createElement("p")
+paragraph.appendChild(document.createTextNode("This is a paragraph"))
+body.appendChild(header)
+body.appendChild(paragraph)
+
+root.appendChild(head)
+root.appendChild(body)
+
+
+//Tables 
+function generateTable(){
+        const table= document.createElement("table")
+        const tableBody= document.createElement("tbody")
+        const studentTable= document.querySelector(".student-table")
+
+        //create the cells
+        for (let i=0; i<2; i++){
+                //create the row
+                const row= document.createElement("tr")
+
+                for (let j=0; j<2; j++){
+                        //create a <td> element and a textnode, make the text
+                        //node the contents of the <td>, and put the <td> at
+                        //the end of the table row
+                        const cell= document.createElement("td")
+                        const cellText=document.createTextNode(`cell in row ${i}, column ${j}`)
+                        cell.appendChild(cellText)
+                        row.appendChild(cell)
+                }
+
+                //add the row to the end of the table body
+                tableBody.appendChild(row)
+        }
+
+        //put the <tbody> in the <table>
+        table.appendChild(tableBody);
+        document.body.insertBefore(table, studentTable.nextSibling)
+
+        table.setAttribute("border", "2")
+
+
+}
+
+const tableButton= document.querySelector(".table-button")
+tableButton.addEventListener("click", generateTable)
+
+
+
+//EVENTS
+// function random(number){
+//         return Math.floor(Math.random()*(number+1))
+// }
+
+// function changeBackground(e){
+//         const randomColor=`rgb(${random(255)}, ${random(255)}, ${random(255)})`
+//         e.target.style.backgroundColor=randomColor
+//         console.log(e)
+//         console.log(e.target)
+// }
+
+// button.addEventListener("keydown", changeBackground)
+
+// const form= document.querySelector("form")
+// const name= document.getElementById("name")
+// const email= document.getElementById("email")
+// const para= document.querySelector(".form-paragraph")
+
+// form.addEventListener("submit", (e)=>{
+        // e.preventDefault()
+        // console.log(e)
+//  if (name.value==="" || email.value===""){
+//          e.preventDefault()
+//          para.textContent="You need to fill in both fields"
+//         console.log(e)
+// }
+// })
+
+
+
+//Event bubbling
+// const output= document.querySelector("#output")
+
+// function handleClick(e){
+//         output.textContent += `You clicked on a ${e.currentTarget.tagName} element\n`
+
+//         console.log(e.currentTarget)
+// }
+
+// const container= document.querySelector("#container")
+// const button= document.querySelector("#button")
+// document.body.addEventListener("click", handleClick)
+// container.addEventListener("click", handleClick)
+// button.addEventListener("click", handleClick)
+
+const btn= document.querySelector(".btn")
+const box= document.querySelector("#div")
+const video= document.querySelector("video")
+
+btn.addEventListener("click", ()=>box.classList.remove("hidden"))
+video.addEventListener("click", (event)=>{
+        console.log(event)
+        event.stopPropagation()
+        video.play()
+
 })
+box.addEventListener("click", ()=>box.classList.add("hidden"))
+
+//stopPROPAGATION()
