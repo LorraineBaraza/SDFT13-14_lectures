@@ -1583,19 +1583,19 @@ tableButton.addEventListener("click", generateTable)
 
 
 //Event bubbling
-// const output= document.querySelector("#output")
+const output= document.querySelector("#output")
 
-// function handleClick(e){
-//         output.textContent += `You clicked on a ${e.currentTarget.tagName} element\n`
+function handleClick(e){
+        const logTarget= `Target: ${e.target.tagName}`
+        const logCurrentTarget= `Current Target: ${e.currentTarget.tagName}`
+        output.textContent += `${logTarget}, ${logCurrentTarget}\n`
+}
 
-//         console.log(e.currentTarget)
-// }
-
-// const container= document.querySelector("#container")
-// const button= document.querySelector("#button")
-// document.body.addEventListener("click", handleClick)
-// container.addEventListener("click", handleClick)
-// button.addEventListener("click", handleClick)
+const container= document.querySelector("#container")
+const button= document.querySelector("#button")
+document.body.addEventListener("click", handleClick)
+container.addEventListener("click", handleClick)
+button.addEventListener("click", handleClick)
 
 const btn= document.querySelector(".btn")
 const box= document.querySelector("#div")
@@ -1608,6 +1608,56 @@ video.addEventListener("click", (event)=>{
         video.play()
 
 })
-box.addEventListener("click", ()=>box.classList.add("hidden"))
+box.addEventListener("click", ()=>box.classList.add("hidden"), {capture: true})
 
 //stopPROPAGATION()
+
+//Event Delegation
+// function random(number){
+//         return Math.floor(Math.random()*number)
+// }
+
+// function bgchange(){
+//         const rndCol= `rgb(${random(255)}, ${random(255)}, ${random(255)})`
+//         return rndCol
+// }
+
+// const container= document.querySelector(".container")
+
+// container.addEventListener("click", (e)=>{
+//         e.target.style.backgroundColor=bgchange()
+//         console.log(e.target)
+//         console.log(e.currentTarget)
+// })
+
+//Network Request  (the fetch api)
+
+//XMLHttpRequest''
+
+///FETCH APi
+
+// fetch()
+// Headers
+// Request
+// Response
+
+async function getData() {
+        const url= "https://example.org/products.json"
+
+        try{
+                const response= await fetch(url)
+                console.log(response)
+                if (!response.ok){
+                        throw new Error(`Response Status : ${response.status}`)
+                }
+                const json= await response.json()
+                console.log(json)
+        } catch (error){
+                console.log(error)
+                console.log(error.message)
+        }
+}
+
+getData()
+
+//Promises
